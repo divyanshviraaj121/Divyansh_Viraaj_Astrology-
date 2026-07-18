@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divyansh Viraaj Astrology — Vedic Horoscopes &amp; Numerology</title>
+<meta name="description" content="Daily horoscopes for all 12 signs and instant numerology readings — Life Path, Destiny, and Soul Urge numbers — from Divyansh Viraaj Astrology.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.divyanshviraaj.example/">
+<meta property="og:title" content="Divyansh Viraaj Astrology — Vedic Horoscopes & Numerology">
+<meta property="og:description" content="Get your daily horoscope and discover your Life Path, Destiny, and Soul Urge numbers — free, instant numerology readings rooted in Vedic tradition.">
+<meta property="og:image" content="https://www.divyanshviraaj.example/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="Divyansh Viraaj Astrology">
+
+<!-- Twitter Card (also used by some link-preview tools) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Divyansh Viraaj Astrology — Vedic Horoscopes & Numerology">
+<meta name="twitter:description" content="Daily horoscopes and instant numerology readings — Life Path, Destiny, and Soul Urge numbers.">
+<meta name="twitter:image" content="https://www.divyanshviraaj.example/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink-deep:#0d0a26;
+    --ink-panel:#1a1442;
+    --ink-panel-2:#231a55;
+    --gold:#c9a24b;
+    --gold-bright:#e6c877;
+    --marigold:#e08a3c;
+    --parchment:#f3ead2;
+    --parchment-dim:#cfc6ac;
+    --maroon:#7a2e3a;
+    --line: rgba(201,162,75,0.28);
+    --shadow: 0 20px 60px rgba(0,0,0,0.45);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at 20% -10%, #241a5c 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 10%, #2a1a4d 0%, transparent 45%),
+      var(--ink-deep);
+    color:var(--parchment);
+    font-family:'Poppins', sans-serif;
+    font-weight:300;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{ font-family:'Cinzel', serif; letter-spacing:0.02em; }
+  .script{ font-family:'Cormorant Garamond', serif; font-style:italic; }
+  .mono{ font-family:'Space Mono', monospace; }
+  a{color:inherit;}
+  .stars{
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, #fff 0%, transparent 60%),
+      radial-gradient(1px 1px at 80% 15%, #fff 0%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 60% 70%, #fff 0%, transparent 60%),
+      radial-gradient(1px 1px at 30% 85%, #fff 0%, transparent 60%),
+      radial-gradient(1px 1px at 45% 40%, #fff 0%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 90% 60%, #fff 0%, transparent 60%),
+      radial-gradient(1px 1px at 15% 55%, #fff 0%, transparent 60%),
+      radial-gradient(1px 1px at 70% 90%, #fff 0%, transparent 60%);
+    opacity:0.5;
+  }
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(13,10,38,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; }
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .brand-mark{ width:34px; height:34px; }
+  .brand-name{ font-family:'Cinzel', serif; font-size:16px; letter-spacing:0.12em; color:var(--gold-bright); text-transform:uppercase; }
+  .brand-name small{ display:block; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:11px; letter-spacing:0.08em; color:var(--parchment-dim); text-transform:none; }
+  nav ul{ list-style:none; display:flex; gap:32px; margin:0; padding:0; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; }
+  nav ul a{ text-decoration:none; opacity:0.82; transition:opacity .25s; }
+  nav ul a:hover{ opacity:1; color:var(--gold-bright); }
+  .nav-toggle{ display:none; }
+
+  /* HERO */
+  header.hero{ position:relative; padding:100px 0 60px; }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px; align-items:center; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:10px; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:22px; }
+  .eyebrow::before{ content:''; width:26px; height:1px; background:var(--gold); }
+  .hero h1{ font-size:52px; line-height:1.12; margin:0 0 22px; color:var(--parchment); font-weight:600; }
+  .hero h1 em{ font-family:'Cormorant Garamond', serif; font-style:italic; color:var(--gold-bright); font-weight:500; }
+  .hero p.lead{ font-size:17px; line-height:1.7; color:var(--parchment-dim); max-width:480px; margin-bottom:34px; }
+  .btn-row{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn{ display:inline-flex; align-items:center; gap:8px; padding:14px 28px; border-radius:2px; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; cursor:pointer; border:1px solid transparent; transition:all .25s; }
+  .btn-primary{ background:var(--gold); color:#1a1442; font-weight:600; }
+  .btn-primary:hover{ background:var(--gold-bright); transform:translateY(-1px); }
+  .btn-ghost{ border-color:var(--line); color:var(--parchment); }
+  .btn-ghost:hover{ border-color:var(--gold); color:var(--gold-bright); }
+
+  /* wheel */
+  .wheel-wrap{ position:relative; display:flex; align-items:center; justify-content:center; }
+  .wheel-wrap svg{ width:100%; max-width:460px; height:auto; }
+  .wheel-outer{ animation:spin 140s linear infinite; transform-origin:230px 230px; }
+  .wheel-mid{ animation:spin 90s linear infinite reverse; transform-origin:230px 230px; }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce){ .wheel-outer,.wheel-mid{ animation:none; } }
+  .zodiac-node{ cursor:pointer; }
+  .zodiac-node circle{ transition:r .2s, fill .2s; }
+  .zodiac-node:hover circle{ fill:var(--marigold); }
+  .zodiac-node text{ font-family:'Space Mono', monospace; font-size:15px; fill:var(--parchment); pointer-events:none; }
+
+  section{ padding:90px 0; position:relative; }
+  .section-head{ max-width:620px; margin:0 auto 50px; text-align:center; }
+  .section-head .eyebrow{ justify-content:center; }
+  .section-head .eyebrow::before{ display:none; }
+  .section-head h2{ font-size:34px; margin:6px 0 14px; color:var(--parchment); }
+  .section-head p{ color:var(--parchment-dim); font-size:15px; line-height:1.7; }
+
+  /* Horoscope grid */
+  .sign-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .sign-card{
+    background:linear-gradient(160deg, var(--ink-panel), var(--ink-panel-2));
+    border:1px solid var(--line);
+    border-radius:4px; padding:22px 20px; cursor:pointer;
+    transition:transform .25s, border-color .25s;
+  }
+  .sign-card:hover{ transform:translateY(-4px); border-color:var(--gold); }
+  .sign-card .glyph{ font-size:26px; color:var(--gold-bright); margin-bottom:10px; display:block; }
+  .sign-card h3{ font-size:16px; margin:0 0 4px; color:var(--parchment); text-transform:uppercase; letter-spacing:0.06em;}
+  .sign-card .dates{ font-size:11px; color:var(--parchment-dim); font-family:'Space Mono', monospace; }
+
+  .reading-panel{
+    margin-top:34px; padding:34px 36px; border-radius:4px;
+    background:rgba(35,26,85,0.55); border:1px solid var(--line);
+    display:none;
+  }
+  .reading-panel.active{ display:block; animation:fadein .4s ease; }
+  @keyframes fadein{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+  .reading-panel .rp-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:16px; flex-wrap:wrap;}
+  .reading-panel .rp-head h3{ font-size:22px; margin:0; color:var(--gold-bright); }
+  .reading-panel .rp-date{ font-size:12px; color:var(--parchment-dim); font-family:'Space Mono', monospace; }
+  .reading-panel p{ line-height:1.8; color:var(--parchment); font-size:15px; }
+  .rp-meta{ display:flex; gap:28px; margin-top:20px; flex-wrap:wrap; }
+  .rp-meta div{ font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--parchment-dim); }
+  .rp-meta div b{ display:block; font-family:'Space Mono', monospace; color:var(--gold-bright); font-size:14px; letter-spacing:0; margin-top:4px; text-transform:none; }
+
+  /* Numerology */
+  .numerology{ background:linear-gradient(180deg, transparent, rgba(122,46,58,0.12) 40%, transparent); }
+  .num-tabs{ display:flex; justify-content:center; gap:10px; margin-bottom:36px; flex-wrap:wrap; }
+  .num-tab{ padding:10px 22px; border:1px solid var(--line); border-radius:100px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; background:transparent; color:var(--parchment-dim); transition:all .2s; }
+  .num-tab.active{ background:var(--gold); border-color:var(--gold); color:#1a1442; font-weight:600; }
+  .num-panel{ display:none; }
+  .num-panel.active{ display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start; }
+  .calc-card{ background:var(--ink-panel); border:1px solid var(--line); border-radius:6px; padding:32px; }
+  .calc-card label{ display:block; font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:var(--parchment-dim); margin-bottom:8px; }
+  .calc-card input{
+    width:100%; padding:13px 14px; margin-bottom:20px; border-radius:3px;
+    border:1px solid var(--line); background:rgba(255,255,255,0.04); color:var(--parchment);
+    font-family:'Poppins',sans-serif; font-size:14px;
+  }
+  .calc-card input:focus{ outline:none; border-color:var(--gold); }
+  .result-box{
+    position:relative; text-align:center; padding:40px 24px;
+    border:1px solid var(--line); border-radius:6px;
+    background:radial-gradient(circle at 50% 20%, rgba(201,162,75,0.14), transparent 60%);
+    min-height:280px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  }
+  .result-num{ font-family:'Space Mono', monospace; font-size:64px; color:var(--gold-bright); line-height:1; margin-bottom:6px; }
+  .result-label{ font-size:12px; text-transform:uppercase; letter-spacing:0.15em; color:var(--marigold); margin-bottom:18px; }
+  .result-text{ font-size:14px; line-height:1.75; color:var(--parchment-dim); max-width:340px; }
+  .result-empty{ color:var(--parchment-dim); font-size:13px; font-style:italic; font-family:'Cormorant Garamond',serif;}
+
+  /* About */
+  .about-grid{ display:grid; grid-template-columns:0.8fr 1.2fr; gap:56px; align-items:center; }
+  .portrait{
+    aspect-ratio:3/4; border-radius:6px; border:1px solid var(--line);
+    background: conic-gradient(from 220deg at 50% 40%, #2a1e63, #4a2f57 30%, #7a2e3a 55%, #c9a24b 75%, #2a1e63);
+    position:relative; overflow:hidden;
+  }
+  .portrait::after{
+    content:'';
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 50% 30%, transparent 30%, rgba(13,10,38,0.65) 100%);
+  }
+  .about-grid h2{ font-size:30px; margin:0 0 18px; color:var(--parchment); }
+  .about-grid p{ line-height:1.85; color:var(--parchment-dim); font-size:15px; margin-bottom:16px;}
+  .about-grid .sig{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:20px; color:var(--gold-bright); margin-top:22px; }
+
+  /* testimonials */
+  .testi-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .testi{ background:var(--ink-panel); border:1px solid var(--line); border-radius:4px; padding:26px; }
+  .testi p{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:17px; line-height:1.6; color:var(--parchment); margin:0 0 14px; }
+  .testi span{ font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--gold); }
+
+  /* consult band */
+  .band{ background:linear-gradient(120deg, var(--maroon), #4a2350); border-radius:8px; padding:56px; text-align:center; margin:0 auto; }
+  .band h2{ font-size:28px; margin:0 0 12px; }
+  .band p{ color:var(--parchment-dim); margin-bottom:26px; }
+
+  footer{ border-top:1px solid var(--line); padding:44px 0 30px; }
+  .foot-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:30px; margin-bottom:30px;}
+  footer h4{ font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold); margin:0 0 14px; }
+  footer ul{ list-style:none; margin:0; padding:0; }
+  footer li{ margin-bottom:9px; font-size:13px; color:var(--parchment-dim); }
+  .foot-bottom{ text-align:center; font-size:11px; color:var(--parchment-dim); opacity:0.7; }
+
+  @media (max-width: 880px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .wheel-wrap{ order:-1; margin-bottom:20px; }
+    .sign-grid{ grid-template-columns:repeat(2,1fr); }
+    nav ul{ display:none; }
+    .num-panel.active{ grid-template-columns:1fr; }
+    .about-grid{ grid-template-columns:1fr; }
+    .testi-row{ grid-template-columns:1fr; }
+    .foot-grid{ grid-template-columns:1fr; }
+    .hero h1{ font-size:36px; }
+  }
+</style>
+</head>
+<body>
+<div class="stars"></div>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="#c9a24b" stroke-width="1.2"/><circle cx="20" cy="20" r="3" fill="#e6c877"/><path d="M20 2 L20 8 M20 32 L20 38 M2 20 L8 20 M32 20 L38 20" stroke="#c9a24b" stroke-width="1"/></svg>
+      <span class="brand-name">Divyansh Viraaj<small>Astrology &amp; Numerology</small></span>
+    </a>
+    <ul>
+      <li><a href="#horoscope">Horoscope</a></li>
+      <li><a href="#numerology">Numerology</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#consult">Consult</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Vedic Astrology · Numerology · Since Birth of Insight</div>
+      <h1>Read the sky.<br>Count your <em>true</em> number.<br>Know your path.</h1>
+      <p class="lead">Divyansh Viraaj Astrology blends traditional Vedic chart-reading with the precision of numerology, so every reading you receive is both ancient in wisdom and specific to you.</p>
+      <div class="btn-row">
+        <a href="#horoscope" class="btn btn-primary">See today's horoscope</a>
+        <a href="#numerology" class="btn btn-ghost">Calculate my number</a>
+      </div>
+    </div>
+    <div class="wheel-wrap">
+      <svg viewBox="0 0 460 460">
+        <g class="wheel-outer" transform="translate(0,0)">
+          <circle cx="230" cy="230" r="210" fill="none" stroke="#c9a24b" stroke-width="0.6" opacity="0.5"/>
+          <g id="tick-ring"></g>
+        </g>
+        <g class="wheel-mid">
+          <circle cx="230" cy="230" r="165" fill="none" stroke="#e08a3c" stroke-width="0.7" opacity="0.55" stroke-dasharray="2 6"/>
+          <g id="zodiac-ring"></g>
+        </g>
+        <circle cx="230" cy="230" r="95" fill="none" stroke="#c9a24b" stroke-width="0.8" opacity="0.6"/>
+        <circle cx="230" cy="230" r="4" fill="#e6c877"/>
+        <text x="230" y="225" text-anchor="middle" fill="#f3ead2" font-family="Cormorant Garamond, serif" font-style="italic" font-size="15">your</text>
+        <text x="230" y="245" text-anchor="middle" fill="#e6c877" font-family="Cinzel, serif" font-size="13" letter-spacing="1">chart</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="horoscope">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Daily Reading</div>
+      <h2>Today's Horoscope</h2>
+      <p>Choose your sun sign for a fresh reading, recalculated daily from the current transit cycle.</p>
+    </div>
+    <div class="sign-grid" id="sign-grid"></div>
+    <div class="reading-panel" id="reading-panel"></div>
+  </div>
+</section>
+
+<section id="numerology" class="numerology">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Numerology Suite</div>
+      <h2>Find the numbers that shape you</h2>
+      <p>Every name and birth date reduces to a governing number. Use either tool below — both are computed instantly, right in your browser.</p>
+    </div>
+
+    <div class="num-tabs">
+      <button class="num-tab active" data-tab="lifepath">Life Path Number</button>
+      <button class="num-tab" data-tab="destiny">Destiny Number</button>
+      <button class="num-tab" data-tab="soul">Soul Urge Number</button>
+    </div>
+
+    <div class="num-panel active" id="panel-lifepath">
+      <div class="calc-card">
+        <label for="dob">Date of birth</label>
+        <input type="date" id="dob">
+        <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="calcLifePath()">Calculate Life Path</button>
+      </div>
+      <div class="result-box" id="result-lifepath"><div class="result-empty">Enter your date of birth to reveal your Life Path Number.</div></div>
+    </div>
+
+    <div class="num-panel" id="panel-destiny">
+      <div class="calc-card">
+        <label for="fullname-destiny">Full birth name</label>
+        <input type="text" id="fullname-destiny" placeholder="e.g. Divyansh Viraaj Sharma">
+        <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="calcDestiny()">Calculate Destiny Number</button>
+      </div>
+      <div class="result-box" id="result-destiny"><div class="result-empty">Enter your full birth name to reveal your Destiny Number.</div></div>
+    </div>
+
+    <div class="num-panel" id="panel-soul">
+      <div class="calc-card">
+        <label for="fullname-soul">Full birth name</label>
+        <input type="text" id="fullname-soul" placeholder="e.g. Divyansh Viraaj Sharma">
+        <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="calcSoul()">Calculate Soul Urge Number</button>
+      </div>
+      <div class="result-box" id="result-soul"><div class="result-empty">Enter your full birth name to reveal your Soul Urge Number.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="portrait"></div>
+    <div>
+      <div class="eyebrow">The Astrologer</div>
+      <h2>About Divyansh Viraaj</h2>
+      <p>Divyansh Viraaj Astrology was founded on a simple belief: the sky and the numbers in your name are both maps, and most people are only ever handed one of them.</p>
+      <p>Drawing on Vedic chart-reading passed through three generations, paired with Pythagorean and Chaldean numerology, every reading here is built to give you something you can actually act on — not just a mood for the day.</p>
+      <p class="sig">— Divyansh Viraaj</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Words From Clients</div>
+      <h2>What people find here</h2>
+    </div>
+    <div class="testi-row">
+      <div class="testi"><p>"The numerology reading explained a pattern in my career I'd never been able to name."</p><span>— Anaya R.</span></div>
+      <div class="testi"><p>"Specific, grounded, and never vague. My daily reading actually matches how the week unfolds."</p><span>— Kabir M.</span></div>
+      <div class="testi"><p>"I've had a dozen readings elsewhere. This is the first one that felt built around me, not a template."</p><span>— Sana T.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="consult">
+  <div class="wrap">
+    <div class="band">
+      <h2>Ready for a full reading?</h2>
+      <p>Book a one-on-one consultation for a complete birth chart and numerology profile.</p>
+      <a href="#" class="btn btn-primary" onclick="alert('This is a demo site — connect a booking tool or contact form here.'); return false;">Book a consultation</a>
+      <a href="tel:+919883151432" class="btn btn-ghost">Call +91 98831 51432</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Divyansh Viraaj Astrology</h4>
+        <p style="color:var(--parchment-dim); font-size:13px; line-height:1.7; max-width:320px;">Vedic astrology and numerology readings, built around your chart and your numbers — not a generic script.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#horoscope">Daily Horoscope</a></li>
+          <li><a href="#numerology">Numerology Tools</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li>hello@divyanshviraaj.example</li>
+          <li><a href="tel:+919883151432" style="text-decoration:none;">+91 98831 51432</a></li>
+          <li>By appointment only</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Divyansh Viraaj Astrology. Demo site for illustrative purposes.</div>
+  </div>
+</footer>
+
+<script>
+/* ---------- Zodiac data ---------- */
+const SIGNS = [
+  {name:"Aries", glyph:"♈", dates:"Mar 21 – Apr 19", element:"Fire"},
+  {name:"Taurus", glyph:"♉", dates:"Apr 20 – May 20", element:"Earth"},
+  {name:"Gemini", glyph:"♊", dates:"May 21 – Jun 20", element:"Air"},
+  {name:"Cancer", glyph:"♋", dates:"Jun 21 – Jul 22", element:"Water"},
+  {name:"Leo", glyph:"♌", dates:"Jul 23 – Aug 22", element:"Fire"},
+  {name:"Virgo", glyph:"♍", dates:"Aug 23 – Sep 22", element:"Earth"},
+  {name:"Libra", glyph:"♎", dates:"Sep 23 – Oct 22", element:"Air"},
+  {name:"Scorpio", glyph:"♏", dates:"Oct 23 – Nov 21", element:"Water"},
+  {name:"Sagittarius", glyph:"♐", dates:"Nov 22 – Dec 21", element:"Fire"},
+  {name:"Capricorn", glyph:"♑", dates:"Dec 22 – Jan 19", element:"Earth"},
+  {name:"Aquarius", glyph:"♒", dates:"Jan 20 – Feb 18", element:"Air"},
+  {name:"Pisces", glyph:"♓", dates:"Feb 19 – Mar 20", element:"Water"},
+];
+
+const OPENERS = [
+  "The transits favor patience today", "A minor shift in routine pays off", "Someone from your past resurfaces briefly",
+  "Your focus sharpens after a slow start", "A conversation clears up old confusion", "Energy runs high early, so pace yourself",
+  "A small financial decision needs a second look", "Your instincts are more reliable than usual", "Rest wins out over ambition today",
+  "An unexpected opportunity is worth a closer look"
+];
+const BODIES = [
+  "in matters of work, steady effort outperforms any shortcut you're tempted to take.",
+  "relationships benefit from listening more than speaking for the next few hours.",
+  "a task you've been avoiding turns out simpler than you feared once you begin.",
+  "money matters call for a practical head rather than an emotional one.",
+  "your creative instincts are worth trusting, even if the plan isn't fully formed.",
+  "family or home life asks for a little more of your attention than usual.",
+  "a decision you've been sitting on can finally be made with confidence.",
+  "collaboration goes better than working alone, so don't hesitate to ask for help.",
+  "your energy is better spent finishing something old than starting something new.",
+  "a boundary you set now will save you friction later in the week."
+];
+const CLOSERS = [
+  "By evening, the day's effort will feel worth it.", "Trust the pace you're keeping.",
+  "Small wins add up faster than they appear to.", "Keep decisions simple and revisit anything big tomorrow.",
+  "A quiet close to the day suits you best.", "What starts today may not finish until later — that's fine."
+];
+
+function seedFor(sign, dateStr){
+  let s = sign + dateStr;
+  let h = 0;
+  for(let i=0;i<s.length;i++){ h = (h*31 + s.charCodeAt(i)) >>> 0; }
+  return h;
+}
+function pick(arr, seed){ return arr[seed % arr.length]; }
+
+function renderSignGrid(){
+  const grid = document.getElementById('sign-grid');
+  grid.innerHTML = SIGNS.map((s,i) => `
+    <div class="sign-card" onclick="showReading(${i})">
+      <span class="glyph">${s.glyph}</span>
+      <h3>${s.name}</h3>
+      <div class="dates">${s.dates}</div>
+    </div>
+  `).join('');
+}
+
+function showReading(i){
+  const sign = SIGNS[i];
+  const today = new Date();
+  const dateStr = today.toISOString().slice(0,10);
+  const seed = seedFor(sign.name, dateStr);
+  const opener = pick(OPENERS, seed);
+  const body = pick(BODIES, Math.floor(seed/7));
+  const closer = pick(CLOSERS, Math.floor(seed/13));
+  const luckyNum = (seed % 9) + 1;
+  const moods = ["Reflective","Bold","Curious","Grounded","Playful","Focused","Tender","Restless","Resolute"];
+  const mood = pick(moods, Math.floor(seed/5));
+  const colors = ["Deep Blue","Marigold","Ivory","Rose","Emerald","Charcoal","Amber","Lilac","Sand"];
+  const color = pick(colors, Math.floor(seed/3));
+
+  const panel = document.getElementById('reading-panel');
+  panel.innerHTML = `
+    <div class="rp-head">
+      <h3>${sign.glyph} ${sign.name}</h3>
+      <span class="rp-date">${today.toLocaleDateString(undefined,{weekday:'long', month:'long', day:'numeric'})}</span>
+    </div>
+    <p>${opener} — ${body} ${closer}</p>
+    <div class="rp-meta">
+      <div>Element<b>${sign.element}</b></div>
+      <div>Mood<b>${mood}</b></div>
+      <div>Lucky Number<b>${luckyNum}</b></div>
+      <div>Lucky Color<b>${color}</b></div>
+    </div>
+  `;
+  panel.classList.add('active');
+  panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+/* ---------- Wheel SVG rings ---------- */
+function buildWheel(){
+  const zodiacRing = document.getElementById('zodiac-ring');
+  const tickRing = document.getElementById('tick-ring');
+  const cx=230, cy=230, r=165, rTick=210;
+  let zHtml = '', tHtml='';
+  SIGNS.forEach((s,i)=>{
+    const angle = (i/12) * 2*Math.PI - Math.PI/2;
+    const x = cx + r*Math.cos(angle);
+    const y = cy + r*Math.sin(angle);
+    zHtml += `<g class="zodiac-node" onclick="showReading(${i})" transform="translate(${x},${y})">
+      <circle r="16" fill="#1a1442" stroke="#c9a24b" stroke-width="1"/>
+      <text x="0" y="6" text-anchor="middle">${s.glyph}</text>
+    </g>`;
+  });
+  for(let i=0;i<48;i++){
+    const angle = (i/48)*2*Math.PI;
+    const x1 = cx + (rTick-6)*Math.cos(angle);
+    const y1 = cy + (rTick-6)*Math.sin(angle);
+    const x2 = cx + rTick*Math.cos(angle);
+    const y2 = cy + rTick*Math.sin(angle);
+    tHtml += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#c9a24b" stroke-width="0.6" opacity="0.45"/>`;
+  }
+  zodiacRing.innerHTML = zHtml;
+  tickRing.innerHTML = tHtml;
+}
+
+/* ---------- Numerology ---------- */
+const NUM_MEANINGS = {
+  1:"A number of independence and initiative. You lead best when you trust your own read on a situation rather than waiting for consensus.",
+  2:"A number of partnership and sensitivity. You do your best work alongside others, and your instinct for balance is a genuine asset.",
+  3:"A number of expression. Communication, humor, and creativity move easily through you — the challenge is following through once the idea lands.",
+  4:"A number of structure. You build things that last, often by doing the unglamorous work others skip.",
+  5:"A number of change. You're wired for variety and movement; routine wears on you faster than it does on most people.",
+  6:"A number of responsibility. Home, family, and care come naturally to you, sometimes at the cost of your own needs.",
+  7:"A number of introspection. You think in depth rather than in breadth, and you trust evidence over easy answers.",
+  8:"A number of ambition. You have a natural grip on power, money, and scale — the lesson is using it without losing perspective.",
+  9:"A number of completion. You tend to see the whole picture and feel pulled toward causes bigger than yourself.",
+  11:"A master number of intuition. You sense things before you can explain them — the work is learning to trust that without over-explaining it.",
+  22:"A master number of the builder. You can turn a large, abstract vision into something concrete and lasting.",
+  33:"A master number of guidance. You're drawn to uplift others, often putting their growth ahead of your own recognition."
+};
+
+function reduceNumber(n){
+  while(n > 9 && n !== 11 && n !== 22 && n !== 33){
+    n = String(n).split('').reduce((a,d)=>a+parseInt(d),0);
+  }
+  return n;
+}
+
+function calcLifePath(){
+  const val = document.getElementById('dob').value;
+  const box = document.getElementById('result-lifepath');
+  if(!val){ box.innerHTML = '<div class="result-empty">Please choose a date of birth first.</div>'; return; }
+  const [y,m,d] = val.split('-').map(Number);
+  const total = reduceNumber(reduceNumber(y) + reduceNumber(m) + reduceNumber(d));
+  box.innerHTML = `
+    <div class="result-num">${total}</div>
+    <div class="result-label">Life Path Number</div>
+    <div class="result-text">${NUM_MEANINGS[total]}</div>
+  `;
+}
+
+const LETTER_MAP = {a:1,b:2,c:3,d:4,e:5,f:6,g:7,h:8,i:9,j:1,k:2,l:3,m:4,n:5,o:6,p:7,q:8,r:9,s:1,t:2,u:3,v:4,w:5,x:6,y:7,z:8};
+const VOWELS = ['a','e','i','o','u'];
+
+function calcDestiny(){
+  const name = document.getElementById('fullname-destiny').value.toLowerCase().replace(/[^a-z]/g,'');
+  const box = document.getElementById('result-destiny');
+  if(!name){ box.innerHTML = '<div class="result-empty">Please enter your full birth name first.</div>'; return; }
+  let sum = 0;
+  for(const ch of name){ sum += LETTER_MAP[ch] || 0; }
+  const total = reduceNumber(sum);
+  box.innerHTML = `
+    <div class="result-num">${total}</div>
+    <div class="result-label">Destiny Number</div>
+    <div class="result-text">${NUM_MEANINGS[total]}</div>
+  `;
+}
+
+function calcSoul(){
+  const name = document.getElementById('fullname-soul').value.toLowerCase().replace(/[^a-z]/g,'');
+  const box = document.getElementById('result-soul');
+  if(!name){ box.innerHTML = '<div class="result-empty">Please enter your full birth name first.</div>'; return; }
+  let sum = 0;
+  for(const ch of name){ if(VOWELS.includes(ch)) sum += LETTER_MAP[ch] || 0; }
+  const total = reduceNumber(sum || 0);
+  box.innerHTML = `
+    <div class="result-num">${total}</div>
+    <div class="result-label">Soul Urge Number</div>
+    <div class="result-text">${NUM_MEANINGS[total] || "Add a few more vowels to your name to reveal this number."}</div>
+  `;
+}
+
+/* ---------- Tabs ---------- */
+document.querySelectorAll('.num-tab').forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    document.querySelectorAll('.num-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.num-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.tab).classList.add('active');
+  });
+});
+
+renderSignGrid();
+buildWheel();
+showReading(11); // default: Pisces, a nod to the reference reading
+</script>
+</body>
+</html>
